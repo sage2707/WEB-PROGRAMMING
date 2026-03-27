@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SAHAJ MADAN - 24BCT0099</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: skyblue;
+}
+
+h1 {
+  text-align: center;
+  color: darkblue;
+  margin-top: 20px;
+}
+
+nav {
+  text-align: center;
+  margin: 20px 0;
+}
+
+nav a {
+  text-decoration: none;
+  background-color: darkblue;
+  color: white;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+form {
+  width: 80%;
+  margin: auto;
+}
+
+.section {
+  background-color: darkblue;
+  color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.section h2 {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  background-color: white;
+  color: darkblue;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+}
+</style>
+</head>
+<body>
+
+<h1>Student Registration Portal</h1>
+
+<nav>
+  <a href="#personal">Personal Information</a>
+  <a href="#academic">Academic Details</a>
+  <a href="#address">Address Information</a>
+  <a href="#account">Account Credentials</a>
+</nav>
+
+<form onsubmit="alert('Form Submitted Successfully')">
+  <div class="section" id="personal">
+    <h2>Personal Information</h2>
+    <label>Full Name</label>
+    <input type="text">
+    <label>Date of Birth</label>
+    <input type="date">
+    <label>Gender</label>
+    <select>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </select>
+    <label>Email Address</label>
+    <input type="email">
+    <label>Mobile Number</label>
+    <input type="text">
+  </div>
+
+  <div class="section" id="academic">
+    <h2>Academic Details</h2>
+    <label>Register Number</label>
+    <input type="text">
+    <label>Degree Program</label>
+    <input type="text">
+    <label>Department</label>
+    <input type="text">
+    <label>Year of Study</label>
+    <input type="text">
+  </div>
+
+  <div class="section" id="address">
+    <h2>Address Information</h2>
+    <label>Door Number</label>
+    <input type="text">
+    <label>Street Name</label>
+    <input type="text">
+    <label>City</label>
+    <input type="text">
+    <label>State</label>
+    <input type="text">
+    <label>Pincode</label>
+    <input type="text">
+  </div>
+
+  <div class="section" id="account">
+    <h2>Account Credentials</h2>
+    <label>Username</label>
+    <input type="text">
+    <label>Password</label>
+    <input type="password">
+    <label>Confirm Password</label>
+    <input type="password">
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
