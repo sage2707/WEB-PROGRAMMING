@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sahaj Madan 24BCT0099</title>
+</head>
+<body>
+<p id="text">Customize this text</p>
+
+<fieldset>
+<legend>Font Customization</legend>
+Font Size: <input type="range" min="10" max="50" oninput="changeFontSize(this.value)"><br><br>
+Text Color: <input type="color" onchange="changeTextColor(this.value)"><br><br>
+Background Color: <input type="color" onchange="changeBgColor(this.value)"><br><br>
+</fieldset>
+<script>
+function changeFontSize(size) {
+    document.getElementById("text").style.fontSize = size + "px";
+}
+function changeTextColor(color) {
+    document.getElementById("text").style.color = color;
+}
+function changeBgColor(color) {
+    document.getElementById("text").style.backgroundColor = color;
+}
+</script>
+</body>
+</html>
