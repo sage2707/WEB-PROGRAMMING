@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sahaj Madan 24BCT0099</title>
+</head>
+<body>
+
+<input type="checkbox" name="subject" value="Math">Math<br>
+<input type="checkbox" name="subject" value="Science">Science<br>
+<input type="checkbox" name="subject" value="English">English<br>
+<input type="checkbox" name="subject" value="Computer">Computer<br><br>
+
+<button onclick="countSubjects()">Show Selected</button>
+
+<p id="result"></p>
+
+<script>
+function countSubjects() {
+    var subjects = document.getElementsByName("subject");
+    var selected = [];
+    var count = 0;
+
+    for(var i = 0; i < subjects.length; i++) {
+        if(subjects[i].checked) {
+            selected.push(subjects[i].value);
+            count++;
+        }
+    }
+
+    document.getElementById("result").innerHTML =
+    "Count: " + count + "<br>Subjects: " + selected.join(", ");
+}
+</script>
+
+</body>
+</html>
