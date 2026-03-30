@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sahaj Madan 24BCT0099</title>
+</head>
+<body>
+
+<input type="number" id="num1" step="any" placeholder="Enter first number"><br><br>
+<input type="number" id="num2" step="any" placeholder="Enter second number"><br><br>
+
+<button onclick="calculate('+')">Add</button>
+<button onclick="calculate('-')">Subtract</button>
+<button onclick="calculate('*')">Multiply</button>
+<button onclick="calculate('/')">Divide</button>
+
+<p id="result"></p>
+
+<script>
+function calculate(op) {
+    var n1 = parseFloat(document.getElementById("num1").value);
+    var n2 = parseFloat(document.getElementById("num2").value);
+    var res;
+
+    switch(op) {
+        case '+': res = n1 + n2; break;
+        case '-': res = n1 - n2; break;
+        case '*': res = n1 * n2; break;
+        case '/':
+            if(n2 == 0) {
+                res = "Cannot divide by zero";
+            } else {
+                res = n1 / n2;
+            }
+            break;
+    }
+
+    document.getElementById("result").innerHTML = res;
+}
+</script>
+
+</body>
+</html>
