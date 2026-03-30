@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sahaj Madan 24BCT0099</title>
+    <style>
+        .italic { font-style: italic; }
+        .bold { font-weight: bold; }
+        .smallcaps { font-variant: small-caps; }
+    </style>
+</head>
+<body>
+
+<p id="text">This is a sample message</p>
+
+<fieldset>
+<legend>Text Styling</legend>
+
+<button onclick="applyStyle('italic')">Italic</button>
+<button onclick="applyStyle('bold')">Bold</button>
+<button onclick="applyStyle('smallcaps')">Small Caps</button>
+<button onclick="applyStyle('italic bold smallcaps')">All Styles</button>
+
+</fieldset>
+
+<script>
+function applyStyle(style) {
+    document.getElementById("text").className = style;
+}
+</script>
+
+</body>
+</html>
