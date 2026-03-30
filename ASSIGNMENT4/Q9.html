@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sahaj Madan 24BCT0099</title>
+</head>
+<body>
+
+<input type="radio" name="color" value="Red">Red<br>
+<input type="radio" name="color" value="Green">Green<br>
+<input type="radio" name="color" value="Blue">Blue<br><br>
+
+<button onclick="showColor()">Show Selected</button>
+
+<p id="result"></p>
+
+<script>
+function showColor() {
+    var colors = document.getElementsByName("color");
+    var selected = "";
+
+    for(var i = 0; i < colors.length; i++) {
+        if(colors[i].checked) {
+            selected = colors[i].value;
+        }
+    }
+
+    document.getElementById("result").innerHTML = selected;
+}
+</script>
+
+</body>
+</html>
