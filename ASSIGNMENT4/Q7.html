@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sahaj Madan 24BCT0099</title>
+</head>
+<body>
+
+<input type="number" id="num" placeholder="Enter N"><br><br>
+<button onclick="printNumbers()">Print</button>
+
+<p id="result"></p>
+
+<script>
+function printNumbers() {
+    var n = parseInt(document.getElementById("num").value);
+    var i = 1;
+    var output = "";
+
+    while(i <= n) {
+        output += i + " ";
+        i++;
+    }
+
+    document.getElementById("result").innerHTML = output;
+}
+</script>
+
+</body>
+</html>
