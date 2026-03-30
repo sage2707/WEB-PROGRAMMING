@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sahaj Madan 24BCT0099</title>
+    <style>
+        .container {
+            position: relative;
+            width: 500px;
+            height: 300px;
+        }
+        img {
+            position: absolute;
+            width: 200px;
+            height: 150px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="cyber.png" style="top:20px; left:20px;" onclick="bringFront(this)">
+    <img src="image.png" style="top:60px; left:80px;" onclick="bringFront(this)">
+    <img src="mental.png" style="top:100px; left:140px;" onclick="bringFront(this)">
+</div>
+
+<script>
+var topIndex = 1;
+
+function bringFront(img) {
+    img.style.zIndex = ++topIndex;
+}
+</script>
+
+</body>
+</html>
