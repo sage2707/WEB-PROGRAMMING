@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sahaj Madan 24BCT0099</title>
+</head>
+<body>
+
+<form id="orderForm">
+
+<fieldset>
+<legend>Electronics</legend>
+<input type="checkbox" name="item" value="500">Headphones (500)<br>
+<input type="checkbox" name="item" value="1000">Keyboard (1000)<br>
+</fieldset>
+
+<br>
+
+<fieldset>
+<legend>Clothing</legend>
+<input type="checkbox" name="item" value="800">Shirt (800)<br>
+<input type="checkbox" name="item" value="1200">Jacket (1200)<br>
+</fieldset>
+
+<br>
+
+<button type="button" onclick="calculateTotal()">Calculate Total</button>
+
+</form>
+
+<p id="result"></p>
+
+<script>
+function calculateTotal() {
+    var items = document.getElementsByName("item");
+    var total = 0;
+
+    for (var item of items) {
+        if (item.checked) {
+            total += parseFloat(item.value);
+        }
+    }
+
+    document.getElementById("result").innerHTML = "Total Price: " + total;
+}
+</script>
+
+</body>
+</html>
