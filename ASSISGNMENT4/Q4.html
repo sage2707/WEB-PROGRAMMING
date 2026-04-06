@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SAHAJ MADAN 24BCT0099</title>
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<style>
+.container{
+text-align:center;
+}
+.preview{
+width:300px;
+height:200px;
+margin:20px;
+border:2px solid black;
+}
+.gallery{
+display:flex;
+justify-content:center;
+gap:10px;
+}
+.thumb{
+width:80px;
+height:60px;
+cursor:pointer;
+transition:transform 0.3s;
+}
+.thumb:hover{
+transform:scale(1.2);
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel">
+
+const App = () => {
+
+const images = [
+"https://picsum.photos/id/1015/300/200",
+"https://picsum.photos/id/1016/300/200",
+"https://picsum.photos/id/1018/300/200",
+"https://picsum.photos/id/1020/300/200"
+];
+
+const [current,setCurrent] = React.useState(images[0]);
+
+return (
+<div className="container">
+
+<img src={current} className="preview"/>
+
+<div className="gallery">
+{
+images.map((img,index)=>(
+<img 
+key={index}
+src={img}
+className="thumb"
+onClick={()=>setCurrent(img)}
+/>
+))
+}
+</div>
+
+</div>
+);
+
+};
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+
+</script>
+
+</body>
+</html>
