@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SAHAJ MADAN 24BCT0099</title>
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<style>
+.box{
+width:300px;
+margin:100px auto;
+padding:20px;
+border:2px solid black;
+text-align:center;
+background-color:#f9f9f9;
+}
+input{
+margin:5px;
+padding:5px;
+width:80%;
+}
+button{
+margin:10px;
+padding:5px 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel">
+
+const App = () => {
+
+const [m1,setM1] = React.useState("");
+const [m2,setM2] = React.useState("");
+const [m3,setM3] = React.useState("");
+const [grade,setGrade] = React.useState("");
+
+const calculate = () => {
+const avg = (Number(m1)+Number(m2)+Number(m3))/3;
+
+if(avg>=90) setGrade("A");
+else if(avg>=75) setGrade("B");
+else if(avg>=50) setGrade("C");
+else setGrade("F");
+};
+
+return (
+<div className="box">
+
+<h2>Grade Calculator</h2>
+
+<input type="number" value={m1} onChange={(e)=>setM1(e.target.value)} />
+<input type="number" value={m2} onChange={(e)=>setM2(e.target.value)} />
+<input type="number" value={m3} onChange={(e)=>setM3(e.target.value)} />
+
+<button onClick={calculate}>Calculate Grade</button>
+
+<h3>Grade: {grade}</h3>
+
+</div>
+);
+
+};
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+
+</script>
+
+</body>
+</html>
