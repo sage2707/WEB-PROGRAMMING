@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SAHAJ MADAN 24BCT0099</title>
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel">
+
+function Welcome(props) {
+  return (
+    <div style={{color:"blue", textAlign:"center"}}>
+      <h1>Hello {props.name} from {props.city}</h1>
+      <p>Welcome to your React application</p>
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<Welcome name="Sahaj" city="Chennai" />);
+
+</script>
+
+</body>
+</html>
