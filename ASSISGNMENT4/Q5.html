@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SAHAJ MADAN 24BCT0099</title>
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<style>
+.box{
+width:300px;
+margin:100px auto;
+padding:20px;
+border:2px solid black;
+text-align:center;
+background-color:#f4f4f4;
+}
+input{
+padding:5px;
+margin:5px;
+width:70%;
+}
+button{
+padding:5px 10px;
+margin:5px;
+}
+li{
+text-align:left;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel">
+
+const App = () => {
+
+const [task,setTask] = React.useState("");
+const [list,setList] = React.useState([]);
+
+const addTask = () => {
+if(task!==""){
+setList([...list,task]);
+setTask("");
+}
+};
+
+return (
+<div className="box">
+
+<h2>Todo List</h2>
+
+<input value={task} onChange={(e)=>setTask(e.target.value)} />
+
+<button onClick={addTask}>Add</button>
+
+<ul>
+{
+list.map((item,index)=>(
+<li key={index}>{item}</li>
+))
+}
+</ul>
+
+</div>
+);
+
+};
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+
+</script>
+
+</body>
+</html>
