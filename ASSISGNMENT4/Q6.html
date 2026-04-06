@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SAHAJ MADAN 24BCT0099</title>
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<style>
+body{
+font-family:Arial;
+background:#e3f2fd;
+text-align:center;
+}
+.box{
+width:300px;
+margin:50px auto;
+padding:20px;
+border:2px solid black;
+background:white;
+border-radius:10px;
+}
+input{
+padding:6px;
+margin:5px;
+width:70%;
+}
+button{
+padding:6px 12px;
+margin:5px;
+cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel">
+
+const getWeather = async (city) => {
+const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=439d4b804bc8187953eb36d2a8c26a02&units=metric`);
+const data = await res.json();
+return {
+name:data.name,
+temp:data.main.temp,
+desc:data.weather[0].description,
+humidity:data.main.humidity,
+wind:data.wind.speed
+};
+};
+
+const Header = () => {
+return <h1>Weather Dashboard</h1>;
+};
+
+const Search = ({fetchData}) => {
+const [input,setInput] = React.useState("");
+return (
+<div>
+<input value={input} onChange={e=>setInput(e.target.value)} placeholder="Enter city"/>
+<button onClick={()=>fetchData(input)}>Search</button>
+</div>
+);
+};
+
+const Dashboard = ({weather}) => {
+if(!weather) return null;
+return (
+<div className="box">
+<h2>{weather.name}</h2>
+<p>Temperature: {weather.temp}°C</p>
+<p>Condition: {weather.desc}</p>
+<p>Humidity: {weather.humidity}%</p>
+<p>Wind: {weather.wind} m/s</p>
+</div>
+);
+};
+
+const App = () => {
+
+const [weather,setWeather] = React.useState(null);
+
+const fetchData = async (city) => {
+const data = await getWeather(city);
+setWeather(data);
+};
+
+return (
+<div>
+<Header/>
+<Search fetchData={fetchData}/>
+<Dashboard weather={weather}/>
+</div>
+);
+
+};
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+
+</script>
+
+</body>
+</html>
